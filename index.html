@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="100% Free Career Counselling, University Admission Guidance & Placement Services. Expert consultants helping 10,000+ students secure their academic future.">
+    <meta name="keywords" content="career counselling, admission guidance, university admissions, placement services, free education consulting, Delhi, Rohtak">
+    <meta name="author" content="Navyug Educare India">
+    <meta name="theme-color" content="#001f3f">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://navyugeducareindia.com/">
+    <meta property="og:title" content="Navyug Educare India - 100% Free Career Counselling & Admission Guidance">
+    <meta property="og:description" content="Expert education consulting for university admissions, career planning & placement support. Trusted by 10,000+ students across India.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://navyugeducareindia.com/">
+    <meta property="twitter:title" content="Navyug Educare India - 100% Free Career Counselling">
+    <meta property="twitter:description" content="Get expert career guidance, university admission help & placement support - completely free. Join 10,000+ successful students.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
+    
+    <title>Navyug Educare India - Free Career Counselling & University Admissions</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS for animations and utilities -->
+    <style>
+        :root {
+            --navy: #001f3f;
+            --navy-light: #0a2644;
+            --teal: #0ea5a8;
+            --teal-light: #14b8a6;
+            --accent: #06b6d4;
+            --white: #ffffff;
+            --gray-light: #f8fafc;
+            --gray-medium: #94a3b8;
+            --text-dark: #0f172a;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 1.5rem 0;
+        }
+
+        .marquee {
+            display: flex;
+            animation: marquee 25s linear infinite;
+            gap: 3rem;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            flex-shrink: 0;
+            padding: 0 2rem;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Smooth Transitions */
+        .transition-all {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition-all;
+            box-shadow: 0 4px 15px rgba(14, 165, 168, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 168, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--success);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition-all;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--navy);
+            background: transparent;
+            color: var(--navy);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition-all;
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition-all;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Counter Animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .counter-item {
+            animation: countUp 0.6s ease-out forwards;
+        }
+
+        /* Accordion */
+        details {
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            cursor: pointer;
+            transition-all;
+        }
+
+        details:hover {
+            border-color: var(--teal);
+            background: #f0fdfc;
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--navy);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        summary::after {
+            content: '+';
+            font-weight: 700;
+            color: var(--teal);
+            font-size: 1.5rem;
+        }
+
+        details[open] {
+            border-color: var(--teal);
+            background: #f0fdfc;
+        }
+
+        .details-content {
+            margin-top: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        nav.sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu.active .line1 {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .mobile-menu.active .line2 {
+            opacity: 0;
+        }
+
+        .mobile-menu.active .line3 {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .line {
+            width: 25px;
+            height: 3px;
+            background: var(--navy);
+            transition: 0.3s;
+        }
+
+        #navMenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            flex-direction: column;
+            padding: 2rem 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #navMenu.active {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            #navMenu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 999;
+            }
+
+            #navMenu.active {
+                display: flex;
+            }
+
+            .desktop-nav-buttons {
+                display: none;
+            }
+
+            .mobile-nav-buttons {
+                display: flex;
+                gap: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #e2e8f0;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-nav-buttons {
+                display: none;
+            }
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(14, 165, 168, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Testimonial Slider */
+        .testimonials-wrapper {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .testimonials-wrapper::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .testimonials-wrapper::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+
+        .testimonials-wrapper::-webkit-scrollbar-thumb {
+            background: var(--teal);
+            border-radius: 10px;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--teal);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--teal);
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-horizontal .timeline-item::before {
+                top: -2rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+        }
+
+        /* Testimonial Card */
+        .testimonial-card {
+            min-width: 350px;
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-right: 1.5rem;
+        }
+
+        /* Logo/Branding */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Stats Counter */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        @media (max-width: 640px) {
+            .stat-number {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 500;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            cursor: pointer;
+            transition-all;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        /* Performance optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Section Backgrounds */
+        .bg-light {
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .bg-accent {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        /* Service Icons */
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        /* Smooth scrolling for internal links */
+        a[href^="#"] {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Form submission feedback */
+        .form-message {
+            display: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #6ee7b7;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #7f1d1d;
+            border: 1px solid #fca5a5;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== STICKY HEADER / NAVIGATION ==================== -->
+    <nav class="sticky-header">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+                
+                <!-- Logo -->
+                <a href="#" class="logo" style="text-decoration: none;">
+                    Navyug Educare
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav" style="display: flex; gap: 2rem; align-items: center;">
+                    <a href="#services" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Services</a>
+                    <a href="#process" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Our Process</a>
+                    <a href="#about" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">About</a>
+                    <a href="#testimonials" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Testimonials</a>
+                    <a href="#faq" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">FAQ</a>
+                    <a href="#contact" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Contact</a>
+                </div>
+
+                <!-- Desktop CTA Button -->
+                <div class="desktop-nav-buttons">
+                    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                        Get Free Consultation
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="navMenu">
+                <a href="#services" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Services</a>
+                <a href="#process" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Our Process</a>
+                <a href="#about" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">About</a>
+                <a href="#testimonials" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Testimonials</a>
+                <a href="#faq" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">FAQ</a>
+                <a href="#contact" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Contact</a>
+                
+                <div class="mobile-nav-buttons">
+                    <button class="btn-primary" onclick="closeMobileMenu(); document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                        Get Consultation
+                    </button>
+                    <a href="https://wa.me/919876543210?text=Hi%20Navyug%20Educare%2C%20I%20need%20free%20career%20guidance" class="btn-secondary" style="text-align: center;">
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- NOTE: Update hero headline and tagline to match current promotions -->
+                <h1>Secure Your Academic Future with Expert Guidance</h1>
+                <p>100% Free Career Counselling, University Admission Support & Placement Services. Join 10,000+ Students Who've Transformed Their Educational Journey.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                        Get Free Consultation
+                    </button>
+                    <a href="https://wa.me/919876543210?text=Hi%20Navyug%20Educare%2C%20I%20need%20help%20with%20career%20guidance" class="btn-secondary">
+                        💬 WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST MARQUEE ==================== -->
+    <!-- NOTE: Replace "Partner University X" text with actual partner logos or names. Can link to custom SVG or text-based logos. -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span class="marquee-item">✓ Partner University 1</span>
+            <span class="marquee-item">✓ Partner University 2</span>
+            <span class="marquee-item">✓ Partner University 3</span>
+            <span class="marquee-item">✓ Partner College 1</span>
+            <span class="marquee-item">✓ Partner College 2</span>
+            <span class="marquee-item">✓ Partner Institute 1</span>
+            <span class="marquee-item">✓ Partner Institute 2</span>
+            <span class="marquee-item">✓ Partner University 1</span>
+            <span class="marquee-item">✓ Partner University 2</span>
+            <span class="marquee-item">✓ Partner University 3</span>
+        </div>
+    </div>
+
+    <!-- ==================== CORE SERVICES SECTION ==================== -->
+    <section id="services" style="background: var(--white);">
+        <div class="container">
+            <h2>Our Services</h2>
+            
+            <div class="grid-3">
+                <!-- Service Card 1: Career Counselling -->
+                <div class="card">
+                    <div class="service-icon">🎯</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
+                        Career Counselling
+                    </h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+                        Discover your true potential with personalized career assessments. Our expert counselors help you identify strengths, interests, and optimal career paths aligned with your goals and market demand.
+                    </p>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Personality & Aptitude Testing</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Stream Selection Guidance</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Career Roadmap Creation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2: Admission Guidance -->
+                <div class="card">
+                    <div class="service-icon">🎓</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
+                        Admission Guidance
+                    </h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+                        Navigate the complex university application process with ease. We provide comprehensive guidance on university selection, application requirements, entrance exams, and scholarship opportunities.
+                    </p>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>University Shortlisting</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Application Strategy & SOP</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Entrance Exam Preparation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3: Placement Support -->
+                <div class="card">
+                    <div class="service-icon">💼</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
+                        Placement Support
+                    </h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+                        Launch your professional career with confidence. Our placement support includes resume building, interview coaching, and connections with top employers for internships and full-time roles.
+                    </p>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Resume & Profile Building</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Interview Coaching</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
+                            <span>Employer Connections</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS TIMELINE ==================== -->
+    <section id="process" class="bg-light">
+        <div class="container">
+            <h2>Our Process</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Step 1: Profile Evaluation
+                    </h3>
+                    <p style="color: var(--gray-medium);">
+                        We conduct an in-depth analysis of your academic background, interests, strengths, and career aspirations to create a comprehensive student profile.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Step 2: College Selection
+                    </h3>
+                    <p style="color: var(--gray-medium);">
+                        Based on your profile, we identify and recommend universities and programs that perfectly match your academic goals and career aspirations.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Step 3: Final Enrollment
+                    </h3>
+                    <p style="color: var(--gray-medium);">
+                        We support you through application completion, exam preparation, interview rounds, and final enrollment to secure your admission.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATISTICS / ACHIEVEMENTS ==================== -->
+    <section class="bg-accent">
+        <div class="container">
+            <h2 style="color: var(--white); margin-bottom: 3rem;">Our Impact</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: center;">
+                <!-- Stat 1 -->
+                <div class="counter-item">
+                    <div class="stat-number" style="color: var(--accent);">10,000+</div>
+                    <p style="color: var(--white); font-weight: 500; font-size: 1.125rem;">Students Consulted</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="counter-item">
+                    <div class="stat-number" style="color: var(--accent);">80+</div>
+                    <p style="color: var(--white); font-weight: 500; font-size: 1.125rem;">University Partners</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="counter-item">
+                    <div class="stat-number" style="color: var(--accent);">5,000+</div>
+                    <p style="color: var(--white); font-weight: 500; font-size: 1.125rem;">Successful Admissions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT & VISION SECTION ==================== -->
+    <section id="about" style="background: var(--white);">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Left Column: Text Content -->
+                <div>
+                    <h2 style="text-align: left; margin-bottom: 2rem;">About Navyug Educare</h2>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            Our Mission
+                        </h3>
+                        <p style="color: var(--gray-medium); line-height: 1.8;">
+                            To empower students across India with accessible, expert guidance for their educational and career journeys. We believe quality education consulting should be free and available to every deserving student, regardless of their background.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            Our Vision
+                        </h3>
+                        <p style="color: var(--gray-medium); line-height: 1.8;">
+                            To become India's most trusted free education consulting platform, helping millions of students make informed decisions about their academic future and achieve their dreams.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            Why Choose Us?
+                        </h3>
+                        <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--teal); font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                <span>100% Free Services - No Hidden Charges</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--teal); font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                <span>Expert Counselors with 10+ Years Experience</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--teal); font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                <span>Personalized Guidance Tailored to Your Goals</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--teal); font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                <span>Network of 80+ Universities & Colleges</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <!-- NOTE: Update image URL to your own hosted image or custom photo -->
+                <div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop" 
+                        alt="Educational consulting team helping students" 
+                        style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); object-fit: cover;"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STUDENT TESTIMONIALS ==================== -->
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <h2>Student Success Stories</h2>
+            
+            <!-- NOTE: Testimonials are in a horizontal scroll layout on mobile, grid on desktop -->
+            <div class="testimonials-wrapper" style="display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem;">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                        </div>
+                        <p style="color: var(--text-dark); font-style: italic; line-height: 1.8;">
+                            "Navyug Educare helped me choose the perfect university for my engineering degree. Their guidance was invaluable, and completely free! I got admitted to my dream college."
+                        </p>
+                    </div>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+                        <p style="font-weight: 600; color: var(--navy);">Arjun Sharma</p>
+                        <p style="color: var(--gray-medium); font-size: 0.875rem;">B.Tech Engineering • IIT Delhi</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                        </div>
+                        <p style="color: var(--text-dark); font-style: italic; line-height: 1.8;">
+                            "I was confused about my career path. The career counselling session with Navyug clarified everything. Now I'm pursuing my passion with clear direction."
+                        </p>
+                    </div>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+                        <p style="font-weight: 600; color: var(--navy);">Priya Gupta</p>
+                        <p style="color: var(--gray-medium); font-size: 0.875rem;">B.Com • Delhi University</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                        </div>
+                        <p style="color: var(--text-dark); font-style: italic; line-height: 1.8;">
+                            "The admission guidance process was seamless. They helped with my application, interview prep, and I received 3 acceptances! Grateful for the support."
+                        </p>
+                    </div>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+                        <p style="font-weight: 600; color: var(--navy);">Aditya Verma</p>
+                        <p style="color: var(--gray-medium); font-size: 0.875rem;">MBA • XLRI Jamshedpur</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;">★</span>
+                        </div>
+                        <p style="color: var(--text-dark); font-style: italic; line-height: 1.8;">
+                            "Their placement support helped me land an internship at a top tech company. The resume building and interview coaching made all the difference."
+                        </p>
+                    </div>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+                        <p style="font-weight: 600; color: var(--navy);">Neha Rani</p>
+                        <p style="color: var(--gray-medium); font-size: 0.875rem;">Data Science • Btech CSE Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section id="faq" style="background: var(--white);">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                
+                <!-- FAQ 1 -->
+                <details>
+                    <summary>Is Navyug Educare truly 100% free?</summary>
+                    <div class="details-content">
+                        Yes, absolutely! All our services including career counselling, admission guidance, and placement support are completely free. We believe quality education consulting should be accessible to every deserving student without any financial burden.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details>
+                    <summary>Who is eligible for your services?</summary>
+                    <div class="details-content">
+                        Our services are open to students of all academic backgrounds - whether you're in 10th, 12th, pursuing your bachelor's degree, or considering postgraduate studies. We also support working professionals looking to upskill or transition careers.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details>
+                    <summary>What is the career counselling process like?</summary>
+                    <div class="details-content">
+                        Our process includes personality assessment tests, aptitude evaluations, one-on-one consultations with expert counselors, and personalized career roadmap creation. Sessions are typically conducted online via video calls or at our Delhi and Rohtak offices for in-person meetings.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details>
+                    <summary>How do you help with university admissions?</summary>
+                    <div class="details-content">
+                        We provide comprehensive admission support including university shortlisting based on your profile, application strategy development, statement of purpose (SOP) writing assistance, entrance exam preparation guidance, and interview coaching to maximize your chances of acceptance.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details>
+                    <summary>Where are your offices located?</summary>
+                    <div class="details-content">
+                        We have offices in Delhi and Rohtak. However, most of our services are conducted online, so you can access our counselors from anywhere in India. You can also visit our physical offices for in-person consultations by appointment.
+                    </div>
+                </details>
+
+                <!-- FAQ 6 -->
+                <details>
+                    <summary>How can I book a consultation?</summary>
+                    <div class="details-content">
+                        Simply fill out the consultation form on this page with your details, or reach out to us via WhatsApp at +91-9876543210 or email at info@navyugeducareindia.com. Our team will contact you within 24 hours to schedule your session.
+                    </div>
+                </details>
+
+                <!-- FAQ 7 -->
+                <details>
+                    <summary>Do you help with international university admissions?</summary>
+                    <div class="details-content">
+                        Yes! We provide guidance for admissions to universities in the USA, UK, Canada, Australia, and other countries. Our counselors help with application strategies, test preparation (GMAT, GRE, TOEFL), and visa guidance.
+                    </div>
+                </details>
+
+                <!-- FAQ 8 -->
+                <details>
+                    <summary>What placement services do you offer?</summary>
+                    <div class="details-content">
+                        Our placement services include resume optimization, LinkedIn profile building, interview preparation, technical skill coaching, soft skills training, and direct connections with leading companies for internships and full-time opportunities.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT, LOCATION & LEAD FORM SECTION ==================== -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2>Get Your Free Consultation Today</h2>
+            
+            <div class="grid-2" style="margin-top: 3rem;">
+                
+                <!-- Left Column: Contact Info -->
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 2rem;">
+                        Contact Information
+                    </h3>
+
+                    <!-- Delhi Office -->
+                    <div style="margin-bottom: 2.5rem;">
+                        <h4 style="font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            📍 Delhi Office
+                        </h4>
+                        <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+                            Plot No. 45, Sector 7<br>
+                            New Delhi - 110001<br>
+                            India
+                        </p>
+                        <!-- NOTE: Update phone number to actual office contact -->
+                        <a href="tel:+919876543210" style="color: var(--teal); font-weight: 600; text-decoration: none;">
+                            📞 +91-9876543210
+                        </a>
+                    </div>
+
+                    <!-- Rohtak Office -->
+                    <div style="margin-bottom: 2.5rem;">
+                        <h4 style="font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            📍 Rohtak Office
+                        </h4>
+                        <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+                            Mall Road, Rohtak<br>
+                            Haryana - 124001<br>
+                            India
+                        </p>
+                        <!-- NOTE: Update phone number to actual office contact -->
+                        <a href="tel:+919876543211" style="color: var(--teal); font-weight: 600; text-decoration: none;">
+                            📞 +91-9876543211
+                        </a>
+                    </div>
+
+                    <!-- Email -->
+                    <div style="margin-bottom: 2.5rem;">
+                        <h4 style="font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
+                            ✉️ Email
+                        </h4>
+                        <a href="mailto:info@navyugeducareindia.com" style="color: var(--teal); font-weight: 600; text-decoration: none;">
+                            info@navyugeducareindia.com
+                        </a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--navy); margin-bottom: 1rem;">
+                            Connect With Us
+                        </h4>
+                        <div style="display: flex; gap: 1rem;">
+                            <!-- NOTE: Update social media URLs to actual profiles -->
+                            <a href="https://wa.me/919876543210" style="color: var(--teal); font-size: 1.5rem; text-decoration: none;">
+                                💬
+                            </a>
+                            <a href="https://facebook.com/navyugeducare" style="color: var(--teal); font-size: 1.5rem; text-decoration: none;">
+                                📘
+                            </a>
+                            <a href="https://instagram.com/navyugeducare" style="color: var(--teal); font-size: 1.5rem; text-decoration: none;">
+                                📷
+                            </a>
+                            <a href="https://linkedin.com/company/navyugeducare" style="color: var(--teal); font-size: 1.5rem; text-decoration: none;">
+                                💼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <!-- NOTE: To integrate with a backend, replace the form submission to use services like:
+                     1. Web3Forms (https://web3forms.com) - FREE tier available
+                     2. Formspree (https://formspree.io) - Easy integration
+                     3. Google Forms (embed or redirect)
+                     4. Your own backend API endpoint
+                -->
+                <div>
+                    <form id="contact-form" style="background: var(--white); padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);">
+                        
+                        <!-- Form Message Display -->
+                        <div class="form-message" id="form-message"></div>
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name" style="width: 100%;">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com" style="width: 100%;">
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91-XXXXXXXXXX" style="width: 100%;">
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="form-group">
+                            <label for="course">Interest Area *</label>
+                            <select id="course" name="course" required style="width: 100%;">
+                                <option value="">Select your interest...</option>
+                                <option value="engineering">Engineering (B.Tech)</option>
+                                <option value="medicine">Medicine (MBBS)</option>
+                                <option value="commerce">Commerce & Finance</option>
+                                <option value="arts">Arts & Humanities</option>
+                                <option value="management">Management (MBA)</option>
+                                <option value="law">Law (B.A. LL.B)</option>
+                                <option value="design">Design & Creative</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your educational goals and any specific questions..." style="width: 100%;"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem; padding: 1rem; border: none;">
+                            Send Consultation Request
+                        </button>
+
+                        <p style="color: var(--gray-medium); font-size: 0.875rem; margin-top: 1rem; text-align: center;">
+                            We'll contact you within 24 hours to schedule your free consultation.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; text-align: left;">
+                
+                <!-- Brand Section -->
+                <div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Navyug Educare</h3>
+                    <p style="color: #cbd5e1; font-size: 0.875rem; line-height: 1.8;">
+                        Empowering students with 100% free career counselling, university admission guidance, and placement support across India.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 style="font-weight: 700; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 style="font-weight: 700; margin-bottom: 1rem;">Resources</h4>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li><a href="#">Career Blog</a></li>
+                        <li><a href="#">University Guide</a></li>
+                        <li><a href="#">Admission Tips</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 style="font-weight: 700; margin-bottom: 1rem;">Legal</h4>
+                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div style="border-top: 1px solid #1e3a5f; padding-top: 2rem;">
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                    <p style="color: #cbd5e1; font-size: 0.875rem;">
+                        &copy; 2025 Navyug Educare India. All rights reserved.
+                    </p>
+                    <p style="color: #cbd5e1; font-size: 0.75rem;">
+                        Crafted with ❤️ for students who dream big.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP WIDGET ==================== -->
+    <!-- NOTE: Update WhatsApp number to actual business contact -->
+    <a href="https://wa.me/919876543210?text=Hi%20Navyug%20Educare%2C%20I%20need%20free%20career%20guidance" 
+       class="whatsapp-widget" 
+       aria-label="Chat with us on WhatsApp"
+       title="Chat with us on WhatsApp">
+        <span class="whatsapp-button" style="font-size: 2rem;">💬</span>
+    </a>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when link is clicked
+        function closeMobileMenu() {
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        // Close menu when navigation link is clicked
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Form Submission Handler
+        // NOTE: Replace the formAction URL with your actual backend endpoint
+        // Example backends:
+        // 1. Web3Forms: https://web3forms.com (recommended)
+        // 2. Formspree: https://formspree.io
+        // 3. Google Forms: Create form at forms.google.com and get submission URL
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('form-message');
+            
+            try {
+                // NOTE: Update this URL to your form backend
+                // Option 1: Web3Forms (Free, no backend needed)
+                const formAction = 'https://api.web3forms.com/submit';
+                
+                // Create FormData with Web3Forms access key
+                // Get your free access key from https://web3forms.com
+                const web3formsData = new FormData();
+                web3formsData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY_HERE');
+                web3formsData.append('name', formData.get('name'));
+                web3formsData.append('email', formData.get('email'));
+                web3formsData.append('phone', formData.get('phone'));
+                web3formsData.append('course', formData.get('course'));
+                web3formsData.append('message', formData.get('message'));
+                web3formsData.append('from_name', 'Navyug Educare Contact Form');
+                web3formsData.append('redirect', window.location.href);
+                
+                const response = await fetch(formAction, {
+                    method: 'POST',
+                    body: web3formsData
+                });
+                
+                if (response.ok) {
+                    messageDiv.className = 'form-message success';
+                    messageDiv.textContent = '✓ Thank you! We\'ll contact you within 24 hours.';
+                    form.reset();
+                    
+                    // Clear message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                messageDiv.className = 'form-message error';
+                messageDiv.textContent = '✗ Error submitting form. Please try again or contact us via WhatsApp.';
+                console.error('Form error:', error);
+            }
+        });
+
+        // Smooth scroll enhancement for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Counter Animation on Scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.counter-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add scroll event listener for sticky header shadow
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('nav.sticky-header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // Keyboard accessibility for mobile menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Performance: Lazy load images (for modern browsers)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Analytics Event Tracking (optional - integrate with Google Analytics)
+        function trackEvent(eventName, eventData) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+        }
+
+        // Track form submissions
+        document.getElementById('contact-form').addEventListener('submit', function() {
+            trackEvent('form_submission', {
+                'form_name': 'contact_consultation',
+                'timestamp': new Date().toISOString()
+            });
+        });
+
+        // Track WhatsApp clicks
+        document.querySelector('.whatsapp-widget').addEventListener('click', function() {
+            trackEvent('whatsapp_click', {
+                'action': 'whatsapp_contact'
+            });
+        });
+
+        console.log('Navyug Educare India Website loaded successfully! 🎓');
+    </script>
+</body>
+</html>
