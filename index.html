@@ -95,6 +95,113 @@
             padding: 0 2rem;
         }
 
+        /* Word Cloud Styles */
+        .word-cloud-container {
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 2rem;
+        }
+
+        .word-cloud {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .word-cloud h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .word-cloud-subtitle {
+            color: var(--gray-medium);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .word-cloud-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .tag {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        /* Tag Size Variations */
+        .tag-lg {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+        }
+
+        .tag-md {
+            font-size: 1.15rem;
+            padding: 0.85rem 1.75rem;
+        }
+
+        .tag-sm {
+            font-size: 0.95rem;
+            padding: 0.65rem 1.25rem;
+        }
+
+        /* Tag Color Variations */
+        .tag-teal {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(14, 165, 168, 0.2);
+        }
+
+        .tag-teal:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(14, 165, 168, 0.3);
+        }
+
+        .tag-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #0ea5a8 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+        }
+
+        .tag-accent:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .tag-success {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .tag-success:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .tag-navy {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 31, 63, 0.2);
+        }
+
+        .tag-navy:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 31, 63, 0.3);
+        }
+
         /* Pulse Animation */
         @keyframes pulse {
             0%, 100% {
@@ -542,6 +649,10 @@
                 padding: 3rem 1.5rem;
                 min-height: auto;
             }
+
+            .word-cloud-container {
+                padding: 3rem 1.5rem;
+            }
         }
 
         /* Testimonial Card */
@@ -797,6 +908,42 @@
             <span class="marquee-item">✓ 80+ University Partners</span>
             <span class="marquee-item">✓ 5,000+ Successful Admissions</span>
             <span class="marquee-item">✓ 100% Free Services</span>
+        </div>
+    </div>
+
+    <!-- ==================== WORD CLOUD / TAG CLOUD SECTION ==================== -->
+    <div class="word-cloud-container">
+        <div class="word-cloud">
+            <h2>What We Stand For</h2>
+            <p class="word-cloud-subtitle">Empowering your journey with guidance, support, and opportunities</p>
+            
+            <div class="word-cloud-tags">
+                <!-- Large Tags -->
+                <span class="tag tag-lg tag-teal">Success</span>
+                <span class="tag tag-lg tag-navy">Dreams</span>
+                <span class="tag tag-lg tag-accent">Future</span>
+                <span class="tag tag-lg tag-success">Guidance</span>
+                <span class="tag tag-lg tag-teal">Opportunity</span>
+                
+                <!-- Medium Tags -->
+                <span class="tag tag-md tag-navy">Career Excellence</span>
+                <span class="tag tag-md tag-accent">Education</span>
+                <span class="tag tag-md tag-success">Achievement</span>
+                <span class="tag tag-md tag-teal">Growth</span>
+                <span class="tag tag-md tag-navy">Support</span>
+                <span class="tag tag-md tag-accent">Empowerment</span>
+                <span class="tag tag-md tag-success">Mentorship</span>
+                
+                <!-- Small Tags -->
+                <span class="tag tag-sm tag-teal">Innovation</span>
+                <span class="tag tag-sm tag-navy">Trust</span>
+                <span class="tag tag-sm tag-accent">Goals</span>
+                <span class="tag tag-sm tag-success">Potential</span>
+                <span class="tag tag-sm tag-teal">Transformation</span>
+                <span class="tag tag-sm tag-navy">Excellence</span>
+                <span class="tag tag-sm tag-accent">Inspire</span>
+                <span class="tag tag-sm tag-success">Empower</span>
+            </div>
         </div>
     </div>
 
