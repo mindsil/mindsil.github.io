@@ -26,12 +26,13 @@
     
     <title>Navyug Educare India - Free Career Counselling & University Admissions</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts (preconnect for faster handshake) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- NOTE: Tailwind play CDN was removed. The page uses pure custom CSS + inline styles, so the 300KB Tailwind runtime added weight without value. Re-add if you migrate sections to Tailwind utility classes. -->
+
     <!-- Custom CSS for animations and utilities -->
     <style>
         :root {
@@ -95,281 +96,8 @@
             padding: 0 2rem;
         }
 
-        /* Word Cloud Styles */
-        .word-cloud-container {
-            background: var(--white);
-            padding: 5rem 2rem;
-            position: relative;
-            overflow: visible;
-        }
-
-        .word-cloud {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .word-cloud h2 {
-            font-size: clamp(1.75rem, 4vw, 2.75rem);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
-        }
-
-        .word-cloud-subtitle {
-            color: var(--gray-medium);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 500;
-        }
-
-        .word-cloud-tags {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 2.5rem 2rem;
-            padding: 2rem;
-            align-items: center;
-            justify-items: center;
-            min-height: 450px;
-            grid-auto-rows: minmax(80px, auto);
-        }
-
-        .tag {
-            padding: 0.5rem;
-            border-radius: 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            background: transparent;
-            box-shadow: none;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            min-height: 60px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Tag Size Variations */
-        .tag-xl {
-            font-size: 1.85rem;
-            font-weight: 700;
-            opacity: 1;
-        }
-
-        .tag-lg {
-            font-size: 1.4rem;
-            font-weight: 700;
-            opacity: 0.95;
-        }
-
-        .tag-md {
-            font-size: 1.1rem;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        .tag-sm {
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0.88;
-        }
-
-        /* Tag Color Variations - Extended Palette */
-        .tag-navy {
-            color: #001f3f;
-        }
-
-        .tag-navy:hover {
-            color: #0a2644;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-navy-light {
-            color: #0a2644;
-        }
-
-        .tag-navy-light:hover {
-            color: #001f3f;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-teal {
-            color: #0ea5a8;
-        }
-
-        .tag-teal:hover {
-            color: #0d7377;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-teal-light {
-            color: #14b8a6;
-        }
-
-        .tag-teal-light:hover {
-            color: #0ea5a8;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-accent {
-            color: #06b6d4;
-        }
-
-        .tag-accent:hover {
-            color: #0891b2;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-cyan {
-            color: #0891b2;
-        }
-
-        .tag-cyan:hover {
-            color: #06b6d4;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-success {
-            color: #10b981;
-        }
-
-        .tag-success:hover {
-            color: #059669;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-success-light {
-            color: #34d399;
-        }
-
-        .tag-success-light:hover {
-            color: #10b981;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-emerald {
-            color: #059669;
-        }
-
-        .tag-emerald:hover {
-            color: #047857;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        .tag-teal-dark {
-            color: #0d7377;
-        }
-
-        .tag-teal-dark:hover {
-            color: #14b8a6;
-            font-weight: 700;
-            transform: scale(1.2);
-        }
-
-        /* Rotation and orientation styles */
-        .tag:nth-child(1) { transform: rotate(0deg); }
-        .tag:nth-child(2) { transform: rotate(90deg); }
-        .tag:nth-child(3) { transform: rotate(0deg); }
-        .tag:nth-child(4) { transform: rotate(90deg); }
-        .tag:nth-child(5) { transform: rotate(0deg); }
-        .tag:nth-child(6) { transform: rotate(90deg); }
-        .tag:nth-child(7) { transform: rotate(0deg); }
-        .tag:nth-child(8) { transform: rotate(90deg); }
-        .tag:nth-child(9) { transform: rotate(0deg); }
-        .tag:nth-child(10) { transform: rotate(90deg); }
-        .tag:nth-child(11) { transform: rotate(0deg); }
-        .tag:nth-child(12) { transform: rotate(90deg); }
-        .tag:nth-child(13) { transform: rotate(0deg); }
-        .tag:nth-child(14) { transform: rotate(90deg); }
-        .tag:nth-child(15) { transform: rotate(0deg); }
-        .tag:nth-child(16) { transform: rotate(90deg); }
-        .tag:nth-child(17) { transform: rotate(0deg); }
-        .tag:nth-child(18) { transform: rotate(90deg); }
-        .tag:nth-child(19) { transform: rotate(0deg); }
-        .tag:nth-child(20) { transform: rotate(90deg); }
-        .tag:nth-child(21) { transform: rotate(0deg); }
-        .tag:nth-child(22) { transform: rotate(90deg); }
-        .tag:nth-child(23) { transform: rotate(0deg); }
-        .tag:nth-child(24) { transform: rotate(90deg); }
-
-        .tag:hover {
-            opacity: 1 !important;
-        }
-
-        @media (max-width: 1024px) {
-            .word-cloud-tags {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem 1.5rem;
-                min-height: 400px;
-            }
-
-            .tag {
-                min-height: 55px;
-            }
-
-            .tag-xl {
-                font-size: 1.6rem;
-            }
-
-            .tag-lg {
-                font-size: 1.2rem;
-            }
-
-            .tag-md {
-                font-size: 1rem;
-            }
-
-            .tag-sm {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .word-cloud-tags {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem 1rem;
-                min-height: 350px;
-            }
-
-            .tag {
-                min-height: 50px;
-            }
-
-            .tag-xl {
-                font-size: 1.4rem;
-            }
-
-            .tag-lg {
-                font-size: 1.1rem;
-            }
-
-            .tag-md {
-                font-size: 0.9rem;
-            }
-
-            .tag-sm {
-                font-size: 0.75rem;
-            }
-        }
+        /* Word Cloud / Tag Cloud styles were removed: there is no matching markup
+           in the body. Re-add the section before re-introducing these rules. */
 
         /* Pulse Animation */
         @keyframes pulse {
@@ -561,6 +289,15 @@
             flex-direction: column;
             gap: 0.5rem;
             cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .mobile-menu:focus-visible {
+            outline: 2px solid var(--teal);
+            outline-offset: 2px;
         }
 
         .mobile-menu.active .line1 {
@@ -718,32 +455,7 @@
             border-radius: 10px;
         }
 
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2rem;
-            height: 2rem;
-            background: var(--teal);
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            box-shadow: 0 0 0 2px var(--teal);
-        }
-
-        @media (min-width: 1024px) {
-            .timeline-horizontal .timeline-item::before {
-                top: -2rem;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
+        /* Timeline (legacy block removed; see .timeline-grid / .timeline-item rules above) */
 
         /* Accessibility */
         .sr-only {
@@ -756,6 +468,110 @@
             clip: rect(0, 0, 0, 0);
             white-space: nowrap;
             border-width: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            z-index: 2000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 0.5rem 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Honeypot: hide from real users without using display:none, which some bots skip */
+        .hp-field {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        /* Respect users who opt out of animation at the OS level */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .marquee {
+                animation: none !important;
+            }
+        }
+
+        /* Process timeline: horizontal connector on desktop */
+        .timeline-grid {
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-grid::before {
+                content: '';
+                position: absolute;
+                top: 1.25rem;
+                left: 10%;
+                right: 10%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--teal) 0%, var(--accent) 100%);
+                z-index: 0;
+            }
+
+            .timeline-item {
+                padding-left: 0;
+                padding-top: 4rem;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .timeline-item::before {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline-item::before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--teal);
+            color: var(--white);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .timeline-grid {
+            counter-reset: step;
         }
 
         /* Hero Section */
@@ -1001,13 +817,16 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- ==================== STICKY HEADER / NAVIGATION ==================== -->
-    <nav class="sticky-header">
+    <header>
+    <nav class="sticky-header" aria-label="Primary">
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
-                
+
                 <!-- Logo -->
-                <a href="#" class="logo" style="text-decoration: none;">
+                <a href="#" class="logo" style="text-decoration: none;" aria-label="Navyug Educare home">
                     Navyug Educare
                 </a>
 
@@ -1017,24 +836,32 @@
                     <a href="#courses" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Courses</a>
                     <a href="#process" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Our Process</a>
                     <a href="#about" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">About</a>
-                    <a href="#testimonials" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Testimonials</a>
+                    <a href="#trust" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Why Us</a>
                     <a href="#faq" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">FAQ</a>
                     <a href="#contact" style="color: var(--navy); font-weight: 500; transition: color 0.3s;">Contact</a>
                 </div>
 
                 <!-- Desktop CTA Button -->
                 <div class="desktop-nav-buttons">
-                    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                    <a href="#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">
                         Get Free Consultation
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <div class="mobile-menu" id="mobileMenuToggle" onclick="toggleMobileMenu()">
-                    <div class="line line1"></div>
-                    <div class="line line2"></div>
-                    <div class="line line3"></div>
-                </div>
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenuToggle"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                    aria-label="Toggle navigation menu"
+                    onclick="toggleMobileMenu()"
+                >
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </button>
             </div>
 
             <!-- Mobile Navigation Menu -->
@@ -1043,14 +870,14 @@
                 <a href="#courses" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Courses</a>
                 <a href="#process" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Our Process</a>
                 <a href="#about" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">About</a>
-                <a href="#testimonials" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Testimonials</a>
+                <a href="#trust" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Why Us</a>
                 <a href="#faq" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">FAQ</a>
                 <a href="#contact" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Contact</a>
-                
+
                 <div class="mobile-nav-buttons">
-                    <button class="btn-primary" onclick="closeMobileMenu(); document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                    <a href="#contact" class="btn-primary" style="text-align: center; text-decoration: none;" onclick="closeMobileMenu()">
                         Get Consultation
-                    </button>
+                    </a>
                     <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20free%20career%20guidance" class="btn-secondary" style="text-align: center;">
                         WhatsApp Us
                     </a>
@@ -1058,30 +885,34 @@
             </div>
         </div>
     </nav>
+    </header>
+
+    <main id="main">
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <!-- NOTE: Update hero headline and tagline to match current promotions -->
-                <h1>Secure Your Academic Future with Expert Guidance</h1>
-                <p>Secure a Brighter Future With NAVYUG EDUCARE INDIA PVT LTD.<br><br>100% Free Career Counselling, University Admission Support & Placement Services. Join 10,000+ Students Who've Transformed Their Educational Journey.</p>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
-                    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
-                        Get Free Consultation
-                    </button>
-                    <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20help%20with%20career%20guidance" class="btn-secondary">
-                        💬 WhatsApp Us
-                    </a>
+            <div class="hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 id="hero-title">Secure Your Academic Future with Expert Guidance</h1>
+                    <p>Secure a Brighter Future With NAVYUG EDUCARE INDIA PVT LTD.<br><br>100% Free Career Counselling, University Admission Support &amp; Placement Services. Trusted across North India since 2014.</p>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <a href="#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">
+                            Get Free Consultation
+                        </a>
+                        <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20help%20with%20career%20guidance" class="btn-secondary">
+                            💬 WhatsApp Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== TRUST MARQUEE ==================== -->
-    <!-- NOTE: Replace "Partner University X" text with actual partner logos or names. Can link to custom SVG or text-based logos. -->
-    <div class="marquee-container">
+    <!-- NOTE: Marquee is decorative duplication of stats. aria-hidden so screen readers don't read it twice. -->
+    <div class="marquee-container" aria-hidden="true">
         <div class="marquee">
             <span class="marquee-item">✓ Trusted Across North India</span>
             <span class="marquee-item">✓ 300+ Events Across India</span>
@@ -1101,9 +932,9 @@
     </div>
 
     <!-- ==================== CORE SERVICES SECTION ==================== -->
-    <section id="services" style="background: var(--white);">
+    <section id="services" style="background: var(--white);" aria-labelledby="services-title">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2 id="services-title">Our Services</h2>
             <p style="text-align: center; color: var(--gray-medium); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Comprehensive guidance tailored to your educational and career journey. All services are 100% free with no hidden charges.
             </p>
@@ -1218,35 +1049,32 @@
     </section>
 
     <!-- ==================== PROCESS TIMELINE ==================== -->
-    <section id="process" class="bg-light">
+    <section id="process" class="bg-light" aria-labelledby="process-title">
         <div class="container">
-            <h2>Our Process</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <!-- Step 1 -->
+            <h2 id="process-title">Our 3-Step Process</h2>
+
+            <div class="timeline-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="timeline-item">
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        Step 1: Profile Evaluation
+                        Profile Evaluation
                     </h3>
                     <p style="color: var(--gray-medium);">
                         We conduct an in-depth analysis of your academic background, interests, strengths, and career aspirations to create a comprehensive student profile.
                     </p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="timeline-item">
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        Step 2: College Selection
+                        College Selection
                     </h3>
                     <p style="color: var(--gray-medium);">
                         Based on your profile, we identify and recommend universities and programs that perfectly match your academic goals and career aspirations.
                     </p>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="timeline-item">
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        Step 3: Final Enrollment
+                        Final Enrollment
                     </h3>
                     <p style="color: var(--gray-medium);">
                         We support you through application completion, exam preparation, interview rounds, and final enrollment to secure your admission.
@@ -1257,9 +1085,9 @@
     </section>
 
     <!-- ==================== COURSES SECTION ==================== -->
-    <section id="courses" style="background: var(--white);">
+    <section id="courses" style="background: var(--white);" aria-labelledby="courses-title">
         <div class="container">
-            <h2>Courses We Cover</h2>
+            <h2 id="courses-title">Courses We Cover</h2>
             <p style="text-align: center; color: var(--gray-medium); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 We guide students through admissions across 15 streams in both undergraduate and postgraduate programs.
             </p>
@@ -1337,9 +1165,9 @@
     </section>
 
     <!-- ==================== STATISTICS / ACHIEVEMENTS ==================== -->
-    <section class="bg-accent">
+    <section class="bg-accent" aria-labelledby="impact-title">
         <div class="container">
-            <h2 style="color: var(--white); margin-bottom: 3rem;">Our Impact</h2>
+            <h2 id="impact-title" style="color: var(--white); margin-bottom: 3rem;">Our Impact</h2>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; text-align: center;">
                 <!-- Stat 1 -->
@@ -1370,12 +1198,12 @@
     </section>
 
     <!-- ==================== ABOUT & VISION SECTION ==================== -->
-    <section id="about" style="background: var(--white);">
+    <section id="about" style="background: var(--white);" aria-labelledby="about-title">
         <div class="container">
             <div class="grid-2">
                 <!-- Left Column: Text Content -->
                 <div>
-                    <h2 style="text-align: left; margin-bottom: 2rem;">About Navyug Educare</h2>
+                    <h2 id="about-title" style="text-align: left; margin-bottom: 2rem;">About Navyug Educare</h2>
 
                     <div style="margin-bottom: 2rem;">
                         <p style="display: inline-block; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; margin-bottom: 1rem; font-size: 0.95rem;">ESTABLISHED SINCE 2014</p>
@@ -1384,32 +1212,26 @@
                         </p>
                     </div>
 
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
-                            Our Mission
-                        </h3>
-                        <p style="color: var(--gray-medium); line-height: 1.8;">
+                    <details open style="margin-bottom: 0.75rem;">
+                        <summary>Our Mission</summary>
+                        <div class="details-content">
                             To empower students by providing personalized, insightful, and comprehensive guidance to help them choose the best colleges and courses, ensuring their academic and professional success.
-                        </p>
-                    </div>
+                        </div>
+                    </details>
 
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
-                            Our Vision
-                        </h3>
-                        <p style="color: var(--gray-medium); line-height: 1.8;">
+                    <details style="margin-bottom: 0.75rem;">
+                        <summary>Our Vision</summary>
+                        <div class="details-content">
                             NAVYUG EDUCARE is dedicated to guiding students through the complex landscape of higher education choices. We strive to offer expert advice, detailed information, and unwavering support to help students make informed decisions that align with their aspirations and potential.
-                        </p>
-                    </div>
+                        </div>
+                    </details>
 
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
-                            Our History
-                        </h3>
-                        <p style="color: var(--gray-medium); line-height: 1.8;">
+                    <details style="margin-bottom: 1.5rem;">
+                        <summary>Our History</summary>
+                        <div class="details-content">
                             Founded in 2014, NAVYUG EDUCARE has grown to become a trusted name in North India for educational consulting. With over a decade of experience, we have helped thousands of students navigate their educational journeys, building a reputation for excellence and personalized service.
-                        </p>
-                    </div>
+                        </div>
+                    </details>
 
                     <div>
                         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
@@ -1440,103 +1262,65 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Image -->
-                <!-- NOTE: Update image URL to your own hosted image or custom photo -->
+                <!-- NOTE: Replace this Unsplash placeholder with a brand-owned photo (e.g. team or office). -->
                 <div>
-                    <img 
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop" 
-                        alt="Educational consulting team helping students" 
-                        style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); object-fit: cover;"
+                    <img
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=800&fit=crop&auto=format&q=70"
+                        alt="Counsellor guiding students at Navyug Educare"
+                        width="600"
+                        height="600"
+                        loading="lazy"
+                        decoding="async"
+                        style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); object-fit: cover; aspect-ratio: 1 / 1;"
                     >
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== STUDENT TESTIMONIALS ==================== -->
-    <section id="testimonials" class="bg-light">
+    <!-- ==================== WHY STUDENTS TRUST NAVYUG (replaces fabricated testimonials) ====================
+         NOTE: Real student testimonials should replace this block once you have written consent.
+         Recommended source: pull verified Google Business reviews via the Places API or paste
+         curated quotes here as <blockquote> elements with name + course + college fields. -->
+    <section id="trust" class="bg-light" aria-labelledby="trust-title">
         <div class="container">
-            <h2>Student Success Stories</h2>
-            
-            <!-- NOTE: Testimonials are in a horizontal scroll layout on mobile, grid on desktop -->
-            <div class="testimonials-wrapper" style="display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem;">
-                
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                        </div>
-                        <p style="color: var(--text-dark); font-weight: 500; line-height: 1.8; margin-bottom: 1rem;">
-                            "Navyug Educare's team was incredibly supportive throughout my college application process. Their expert guidance helped me secure admission to my dream university!"
-                        </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <div style="width: 3rem; height: 3rem; background: var(--teal); border-radius: 50%;"></div>
-                            <div>
-                                <p style="font-weight: 600; color: var(--navy);">Priya Sharma</p>
-                                <p style="font-size: 0.875rem; color: var(--gray-medium);">Delhi, India</p>
-                            </div>
-                        </div>
-                    </div>
+            <h2 id="trust-title">Why Students Choose Navyug</h2>
+            <p style="text-align: center; color: var(--gray-medium); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                NAVYUG EDUCARE INDIA is known not only for free consulting; we are known for the work we have done since 2014.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="card">
+                    <div class="service-icon" aria-hidden="true">🎓</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">Expert Guidance</h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8;">
+                        Our team of experienced counsellors provides personalised, insightful advice to help you make informed decisions about your educational and career path.
+                    </p>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                        </div>
-                        <p style="color: var(--text-dark); font-weight: 500; line-height: 1.8; margin-bottom: 1rem;">
-                            "The counselors at Navyug helped me understand my career options. Their personalized approach made all the difference in my decision-making process."
-                        </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <div style="width: 3rem; height: 3rem; background: var(--accent); border-radius: 50%;"></div>
-                            <div>
-                                <p style="font-weight: 600; color: var(--navy);">Rajesh Kumar</p>
-                                <p style="font-size: 0.875rem; color: var(--gray-medium);">Rohtak, India</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="service-icon" aria-hidden="true">🧭</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">Comprehensive Services</h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8;">
+                        From career counselling to college selection and application assistance, we cover the full academic journey under one roof.
+                    </p>
                 </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                            <span style="color: #fbbf24;">★</span>
-                        </div>
-                        <p style="color: var(--text-dark); font-weight: 500; line-height: 1.8; margin-bottom: 1rem;">
-                            "I was confused about my future, but Navyug's counselling gave me clarity. I'm now pursuing my passion with confidence!"
-                        </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <div style="width: 3rem; height: 3rem; background: var(--teal-light); border-radius: 50%;"></div>
-                            <div>
-                                <p style="font-weight: 600; color: var(--navy);">Anjali Singh</p>
-                                <p style="font-size: 0.875rem; color: var(--gray-medium);">Haryana, India</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="service-icon" aria-hidden="true">🏆</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">Proven Track Record</h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8;">
+                        Over a decade of work, 300+ events across India, 5,000+ admissions and 80+ partner colleges and universities.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== FAQ SECTION ==================== -->
-    <section id="faq" style="background: var(--white);">
+    <section id="faq" style="background: var(--white);" aria-labelledby="faq-title">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2 id="faq-title">Frequently Asked Questions</h2>
             <p style="text-align: center; color: var(--gray-medium); font-size: 1rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 Please reach us at <a href="mailto:info@navyugeducareindia.com" style="color: var(--teal); font-weight: 600;">info@navyugeducareindia.com</a> if you cannot find an answer to your question.
             </p>
@@ -1581,9 +1365,9 @@
     </section>
 
     <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="bg-light">
+    <section id="contact" class="bg-light" aria-labelledby="contact-title">
         <div class="container">
-            <h2>Get Your Free Consultation Today</h2>
+            <h2 id="contact-title">Get Your Free Consultation Today</h2>
             
             <div class="grid-2" style="margin-top: 3rem;">
                 <!-- Left Column: Contact Information -->
@@ -1660,48 +1444,159 @@
                         Send us a Message
                     </h3>
 
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
-                        <div class="form-message" id="formMessage"></div>
+                    <!--
+                        ============================================================
+                        LEAD FORM BACKEND
+                        ============================================================
+                        Primary integration: Web3Forms (https://web3forms.com)
+                        Submissions land in info@navyugeducareindia.com inbox.
+                        Access key is configured below; rotate via the Web3Forms dashboard
+                        if it ever leaks.
+
+                        Alternatives (swap form action + handler if you migrate):
+                          - Formspree:    action="https://formspree.io/f/YOUR_ID"
+                          - Google Forms: action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+                                          (use field names like entry.123456789)
+                        ============================================================
+                    -->
+
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleFormSubmit(event)" novalidate>
+                        <!-- Web3Forms required fields -->
+                        <input type="hidden" name="access_key" value="cd5bdde0-99e7-4988-bb13-8b67d84aa090">
+                        <input type="hidden" name="subject" value="New lead: Navyug Educare website">
+                        <input type="hidden" name="from_name" value="Navyug Educare Website">
+                        <input type="hidden" name="redirect" value="false">
+
+                        <!-- Honeypot: real users leave this blank; bots fill it. Submission is silently dropped. -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="company">Company (leave blank)</label>
+                            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
 
                         <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true" placeholder="Enter your full name">
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true" placeholder="Enter your email address">
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                            <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="phone" name="phone" required aria-required="true" pattern="[0-9+\- ]{7,15}" placeholder="Enter your phone number">
                         </div>
 
                         <div class="form-group">
-                            <label for="service">Service Interested In *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="Career Counselling">Career Counselling</option>
-                                <option value="Admission Guidance">Admission Guidance</option>
-                                <option value="Placement Support">Placement Support</option>
-                                <option value="Other">Other - Tell us in message</option>
+                            <label for="course">Course of Interest</label>
+                            <select id="course" name="course">
+                                <option value="">Select a course (optional)</option>
+                                <optgroup label="Undergraduate (UG)">
+                                    <option value="UG: Engineering">UG: Engineering</option>
+                                    <option value="UG: Management">UG: Management</option>
+                                    <option value="UG: Computer Application">UG: Computer Application</option>
+                                    <option value="UG: Law">UG: Law</option>
+                                    <option value="UG: Pharmacy">UG: Pharmacy</option>
+                                    <option value="UG: Education">UG: Education</option>
+                                    <option value="UG: Fashion">UG: Fashion</option>
+                                    <option value="UG: Forensic">UG: Forensic</option>
+                                    <option value="UG: Architecture">UG: Architecture</option>
+                                    <option value="UG: Humanities">UG: Humanities</option>
+                                    <option value="UG: Para-Medical">UG: Para-Medical</option>
+                                    <option value="UG: Nursing">UG: Nursing</option>
+                                    <option value="UG: Agriculture">UG: Agriculture</option>
+                                    <option value="UG: Distance Education">UG: Distance Education</option>
+                                    <option value="UG: Nutrition &amp; Dietetics">UG: Nutrition &amp; Dietetics</option>
+                                </optgroup>
+                                <optgroup label="Postgraduate (PG)">
+                                    <option value="PG: Engineering">PG: Engineering</option>
+                                    <option value="PG: Management">PG: Management</option>
+                                    <option value="PG: Computer Application">PG: Computer Application</option>
+                                    <option value="PG: Law">PG: Law</option>
+                                    <option value="PG: Pharmacy">PG: Pharmacy</option>
+                                    <option value="PG: Education">PG: Education</option>
+                                    <option value="PG: Fashion">PG: Fashion</option>
+                                    <option value="PG: Forensic">PG: Forensic</option>
+                                    <option value="PG: Architecture">PG: Architecture</option>
+                                    <option value="PG: Humanities">PG: Humanities</option>
+                                    <option value="PG: Para-Medical">PG: Para-Medical</option>
+                                    <option value="PG: Nursing">PG: Nursing</option>
+                                    <option value="PG: Agriculture">PG: Agriculture</option>
+                                    <option value="PG: Distance Education">PG: Distance Education</option>
+                                    <option value="PG: Nutrition &amp; Dietetics">PG: Nutrition &amp; Dietetics</option>
+                                </optgroup>
+                                <option value="Not sure / Need counselling">Not sure, I need counselling first</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Tell us about your educational goals and how we can help..."></textarea>
+                            <label for="service">Service Interested In <span aria-hidden="true">*</span></label>
+                            <select id="service" name="service" required aria-required="true">
+                                <option value="">Select a service</option>
+                                <option value="Career Counselling">Career Counselling</option>
+                                <option value="University/College Guidance">University/College Guidance</option>
+                                <option value="Admission Guidance">Admission Guidance</option>
+                                <option value="Scholarship">Scholarship</option>
+                                <option value="Placement Services">Placement Services</option>
+                                <option value="Other">Other (tell us in message)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about your educational goals and how we can help..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem;">
                             Send Message
                         </button>
+
+                        <p style="font-size: 0.85rem; color: var(--gray-medium); margin-top: 1rem; text-align: center;">
+                            Prefer chat? <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" style="color: var(--teal); font-weight: 600; text-decoration: none;">Message us on WhatsApp</a>.
+                        </p>
                     </form>
+                </div>
+            </div>
+
+            <!-- Office Maps -->
+            <div style="margin-top: 4rem;">
+                <h3 style="text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 2rem;">Visit Our Offices</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                    <div>
+                        <p style="font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">📍 Delhi Office</p>
+                        <p style="color: var(--gray-medium); margin-bottom: 1rem; line-height: 1.6;">B-3A, Milap Nagar, Near Uttam Nagar East Metro Station, Opp. Pillar No. 658, Uttam Nagar, Delhi 110059</p>
+                        <iframe
+                            title="Map showing Navyug Educare Delhi Office in Uttam Nagar"
+                            src="https://www.google.com/maps?q=Milap+Nagar+Uttam+Nagar+Delhi+110059&output=embed"
+                            width="100%"
+                            height="280"
+                            style="border: 0; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <p style="font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">📍 Rohtak Office</p>
+                        <p style="color: var(--gray-medium); margin-bottom: 1rem; line-height: 1.6;">F-12, Sai Square Mall, Sheela Bye-Pass, Rohtak 124001, Haryana</p>
+                        <iframe
+                            title="Map showing Navyug Educare Rohtak Office at Sai Square Mall"
+                            src="https://www.google.com/maps?q=Sai+Square+Mall+Sheela+Bye+Pass+Rohtak+124001&output=embed"
+                            width="100%"
+                            height="280"
+                            style="border: 0; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
@@ -1732,43 +1627,79 @@
                     <a href="mailto:info@navyugeducareindia.com" style="font-weight: 600;">✉️ info@navyugeducareindia.com</a>
                 </div>
                 <p style="font-size: 0.95rem; opacity: 0.9;"><strong>Hours:</strong> 09:30 am to 06:30 pm</p>
+
+                <!-- NOTE: Replace # with real social URLs when accounts go live. -->
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" aria-label="Social media">
+                    <a href="#" aria-label="Navyug Educare on Facebook" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">📘</a>
+                    <a href="#" aria-label="Navyug Educare on Instagram" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">📷</a>
+                    <a href="#" aria-label="Navyug Educare on LinkedIn" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">💼</a>
+                    <a href="#" aria-label="Navyug Educare on YouTube" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">▶️</a>
+                    <a href="https://wa.me/919220522887" aria-label="Navyug Educare on WhatsApp" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">💬</a>
+                </div>
             </div>
 
             <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem;">
+                <nav aria-label="Footer" style="margin-bottom: 1rem;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; justify-content: center; font-size: 0.9rem;">
+                        <a href="#services">Services</a>
+                        <a href="#courses">Courses</a>
+                        <a href="#about">About</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </nav>
                 <p style="font-size: 0.875rem; opacity: 0.9;">
                     © 2026 Navyug Educare India Pvt Ltd. All rights reserved.
                 </p>
-                <p style="font-size: 0.875rem; opacity: 0.8; margin-top: 0.5rem;">
-                    Crafted with ❤️ for students who dream big.
+                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.75rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    This website uses cookies to analyse traffic and improve your experience. By continuing to browse, you agree to our use of cookies. Forms are protected by anti-spam measures and your data is handled per our privacy policy.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== WHATSAPP WIDGET ==================== -->
-    <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" class="whatsapp-widget" target="_blank" rel="noopener noreferrer">
-        <div class="whatsapp-button">
-            💬
+    <!-- ==================== COOKIE CONSENT BANNER ==================== -->
+    <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy); color: var(--white); padding: 1rem 1.5rem; z-index: 1500; box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+            <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; flex: 1 1 280px;">
+                We use cookies to analyse site usage and optimise your experience. <a href="#privacy" style="color: var(--teal); font-weight: 600;">Learn more</a>.
+            </p>
+            <div style="display: flex; gap: 0.75rem;">
+                <button type="button" id="cookieAccept" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Accept</button>
+                <button type="button" id="cookieDecline" class="btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; border-color: var(--white); color: var(--white);">Decline</button>
+            </div>
         </div>
+    </div>
+
+    <!-- ==================== WHATSAPP WIDGET ==================== -->
+    <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" class="whatsapp-widget" target="_blank" rel="noopener noreferrer" aria-label="Chat with Navyug Educare on WhatsApp">
+        <span class="whatsapp-button" aria-hidden="true">
+            💬
+        </span>
     </a>
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         // Mobile Menu Toggle
         function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenuToggle');
+            const toggle = document.getElementById('mobileMenuToggle');
             const navMenu = document.getElementById('navMenu');
-            
-            mobileMenu.classList.toggle('active');
+            const opening = !navMenu.classList.contains('active');
+
+            toggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', opening ? 'true' : 'false');
         }
 
         function closeMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenuToggle');
+            const toggle = document.getElementById('mobileMenuToggle');
             const navMenu = document.getElementById('navMenu');
-            
-            mobileMenu.classList.remove('active');
+
+            toggle.classList.remove('active');
             navMenu.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
         }
 
         // Close menu when a link is clicked
@@ -1776,63 +1707,104 @@
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Form Submission Handler
-        function handleFormSubmit(event) {
+        // ============================================================
+        // FORM SUBMISSION
+        // Default: POST to Web3Forms (action attribute on the form).
+        // We intercept submit so we can show inline status without a redirect.
+        // ============================================================
+        async function handleFormSubmit(event) {
             event.preventDefault();
-            
-            const form = document.getElementById('contact-form');
+
+            const form = event.target;
             const formMessage = document.getElementById('formMessage');
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
+            const submitBtn = form.querySelector('button[type="submit"]');
 
-            // Simulate form submission
-            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will contact you shortly.';
-            formMessage.classList.add('success');
-            formMessage.classList.remove('error');
+            // Honeypot: if the hidden "company" field is filled, drop the request silently.
+            if (form.company && form.company.value.trim() !== '') {
+                formMessage.textContent = 'Thank you! We will be in touch shortly.';
+                formMessage.classList.add('success');
+                form.reset();
+                return;
+            }
 
-            // Clear form
-            form.reset();
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
+            // Block submission if access key was not configured.
+            const accessKey = form.access_key && form.access_key.value;
+            if (!accessKey) {
+                formMessage.textContent = 'Form is not yet configured. Please email info@navyugeducareindia.com or use WhatsApp.';
                 formMessage.classList.remove('success');
-            }, 5000);
+                formMessage.classList.add('error');
+                return;
+            }
 
-            // Log form data (in production, this would send to a server)
-            console.log({
-                name,
-                email,
-                phone,
-                service,
-                message,
-                timestamp: new Date().toISOString()
-            });
+            const originalLabel = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.classList.remove('success', 'error');
+            formMessage.textContent = '';
+
+            try {
+                const data = new FormData(form);
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                const json = await res.json().catch(() => ({}));
+
+                if (res.ok && (json.success === true || json.success === undefined)) {
+                    formMessage.textContent = 'Thank you! Your message has been sent. We will contact you within 2 to 4 hours.';
+                    formMessage.classList.add('success');
+                    form.reset();
+                } else {
+                    throw new Error(json.message || 'Submission failed');
+                }
+            } catch (err) {
+                formMessage.textContent = 'Sorry, something went wrong. Please call +91-9220522887 or message us on WhatsApp.';
+                formMessage.classList.add('error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+                setTimeout(() => formMessage.classList.remove('success'), 8000);
+            }
         }
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for in-page anchors (CSS scroll-behavior covers most cases;
+        // this ensures focus moves with the scroll for keyboard users).
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (href === '#' || !document.querySelector(href)) return;
+                const target = document.querySelector(href);
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // After scroll, move focus to the target for screen readers and keyboard users.
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
             });
         });
 
-        // Accessibility: Keyboard navigation
+        // Accessibility: ESC closes the mobile menu
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMobileMenu();
             }
         });
+
+        // Cookie consent banner: shown until accepted/declined, persists in localStorage.
+        (function () {
+            const KEY = 'navyug_cookie_consent';
+            const banner = document.getElementById('cookieBanner');
+            if (!banner) return;
+            if (!localStorage.getItem(KEY)) {
+                banner.style.display = 'block';
+            }
+            const dismiss = (value) => {
+                try { localStorage.setItem(KEY, value); } catch (e) { /* private mode: silently ignore */ }
+                banner.style.display = 'none';
+            };
+            document.getElementById('cookieAccept').addEventListener('click', () => dismiss('accepted'));
+            document.getElementById('cookieDecline').addEventListener('click', () => dismiss('declined'));
+        })();
     </script>
 </body>
 </html>
