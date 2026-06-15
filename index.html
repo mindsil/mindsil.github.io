@@ -97,109 +97,278 @@
 
         /* Word Cloud Styles */
         .word-cloud-container {
-            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 4rem 2rem;
+            background: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: visible;
         }
 
         .word-cloud {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .word-cloud h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--navy);
         }
 
         .word-cloud-subtitle {
             color: var(--gray-medium);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 3rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         .word-cloud-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2.5rem 2rem;
+            padding: 2rem;
             align-items: center;
+            justify-items: center;
+            min-height: 450px;
+            grid-auto-rows: minmax(80px, auto);
         }
 
         .tag {
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.5rem;
+            border-radius: 0;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            min-height: 60px;
+            width: 100%;
+            text-align: center;
         }
 
         /* Tag Size Variations */
+        .tag-xl {
+            font-size: 1.85rem;
+            font-weight: 700;
+            opacity: 1;
+        }
+
         .tag-lg {
-            font-size: 1.5rem;
-            padding: 1rem 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            opacity: 0.95;
         }
 
         .tag-md {
-            font-size: 1.15rem;
-            padding: 0.85rem 1.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
         }
 
         .tag-sm {
-            font-size: 0.95rem;
-            padding: 0.65rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.88;
         }
 
-        /* Tag Color Variations */
-        .tag-teal {
-            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(14, 165, 168, 0.2);
-        }
-
-        .tag-teal:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(14, 165, 168, 0.3);
-        }
-
-        .tag-accent {
-            background: linear-gradient(135deg, var(--accent) 0%, #0ea5a8 100%);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
-        }
-
-        .tag-accent:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-        }
-
-        .tag-success {
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
-        }
-
-        .tag-success:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-        }
-
+        /* Tag Color Variations - Extended Palette */
         .tag-navy {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(0, 31, 63, 0.2);
+            color: #001f3f;
         }
 
         .tag-navy:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 31, 63, 0.3);
+            color: #0a2644;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-navy-light {
+            color: #0a2644;
+        }
+
+        .tag-navy-light:hover {
+            color: #001f3f;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-teal {
+            color: #0ea5a8;
+        }
+
+        .tag-teal:hover {
+            color: #0d7377;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-teal-light {
+            color: #14b8a6;
+        }
+
+        .tag-teal-light:hover {
+            color: #0ea5a8;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-accent {
+            color: #06b6d4;
+        }
+
+        .tag-accent:hover {
+            color: #0891b2;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-cyan {
+            color: #0891b2;
+        }
+
+        .tag-cyan:hover {
+            color: #06b6d4;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-success {
+            color: #10b981;
+        }
+
+        .tag-success:hover {
+            color: #059669;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-success-light {
+            color: #34d399;
+        }
+
+        .tag-success-light:hover {
+            color: #10b981;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-emerald {
+            color: #059669;
+        }
+
+        .tag-emerald:hover {
+            color: #047857;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        .tag-teal-dark {
+            color: #0d7377;
+        }
+
+        .tag-teal-dark:hover {
+            color: #14b8a6;
+            font-weight: 700;
+            transform: scale(1.2);
+        }
+
+        /* Rotation and orientation styles */
+        .tag:nth-child(1) { transform: rotate(0deg); }
+        .tag:nth-child(2) { transform: rotate(90deg); }
+        .tag:nth-child(3) { transform: rotate(0deg); }
+        .tag:nth-child(4) { transform: rotate(90deg); }
+        .tag:nth-child(5) { transform: rotate(0deg); }
+        .tag:nth-child(6) { transform: rotate(90deg); }
+        .tag:nth-child(7) { transform: rotate(0deg); }
+        .tag:nth-child(8) { transform: rotate(90deg); }
+        .tag:nth-child(9) { transform: rotate(0deg); }
+        .tag:nth-child(10) { transform: rotate(90deg); }
+        .tag:nth-child(11) { transform: rotate(0deg); }
+        .tag:nth-child(12) { transform: rotate(90deg); }
+        .tag:nth-child(13) { transform: rotate(0deg); }
+        .tag:nth-child(14) { transform: rotate(90deg); }
+        .tag:nth-child(15) { transform: rotate(0deg); }
+        .tag:nth-child(16) { transform: rotate(90deg); }
+        .tag:nth-child(17) { transform: rotate(0deg); }
+        .tag:nth-child(18) { transform: rotate(90deg); }
+        .tag:nth-child(19) { transform: rotate(0deg); }
+        .tag:nth-child(20) { transform: rotate(90deg); }
+        .tag:nth-child(21) { transform: rotate(0deg); }
+        .tag:nth-child(22) { transform: rotate(90deg); }
+        .tag:nth-child(23) { transform: rotate(0deg); }
+        .tag:nth-child(24) { transform: rotate(90deg); }
+
+        .tag:hover {
+            opacity: 1 !important;
+        }
+
+        @media (max-width: 1024px) {
+            .word-cloud-tags {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem 1.5rem;
+                min-height: 400px;
+            }
+
+            .tag {
+                min-height: 55px;
+            }
+
+            .tag-xl {
+                font-size: 1.6rem;
+            }
+
+            .tag-lg {
+                font-size: 1.2rem;
+            }
+
+            .tag-md {
+                font-size: 1rem;
+            }
+
+            .tag-sm {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .word-cloud-tags {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem 1rem;
+                min-height: 350px;
+            }
+
+            .tag {
+                min-height: 50px;
+            }
+
+            .tag-xl {
+                font-size: 1.4rem;
+            }
+
+            .tag-lg {
+                font-size: 1.1rem;
+            }
+
+            .tag-md {
+                font-size: 0.9rem;
+            }
+
+            .tag-sm {
+                font-size: 0.75rem;
+            }
         }
 
         /* Pulse Animation */
@@ -432,10 +601,16 @@
         @media (max-width: 768px) {
             .mobile-menu {
                 display: flex;
+                z-index: 1001;
+                margin-right: 1rem;
             }
 
             .desktop-nav {
-                display: none;
+                display: none !important;
+            }
+
+            .desktop-nav-buttons {
+                display: none !important;
             }
 
             #navMenu {
@@ -445,14 +620,11 @@
                 right: 0;
                 width: 100%;
                 z-index: 999;
+                display: none;
             }
 
             #navMenu.active {
                 display: flex;
-            }
-
-            .desktop-nav-buttons {
-                display: none;
             }
 
             .mobile-nav-buttons {
@@ -462,9 +634,19 @@
                 border-top: 1px solid #e2e8f0;
                 margin-top: 1rem;
             }
+
+            .logo {
+                font-size: 1.2rem;
+                white-space: nowrap;
+                padding-left: 1rem;
+            }
         }
 
         @media (min-width: 769px) {
+            .mobile-menu {
+                display: none;
+            }
+
             .mobile-nav-buttons {
                 display: none;
             }
@@ -486,18 +668,19 @@
         textarea,
         select {
             width: 100%;
-            padding: 1rem;
+            padding: 1.25rem 1.5rem;
             border: 1px solid #cbd5e1;
             border-radius: 0.5rem;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: border-color 0.3s;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         input::placeholder,
         textarea::placeholder {
             color: #cbd5e1;
+            padding-left: 0.5rem;
         }
 
         input:focus,
@@ -510,8 +693,8 @@
 
         textarea {
             resize: vertical;
-            min-height: 120px;
-            padding: 1rem;
+            min-height: 140px;
+            padding: 1.25rem 1.5rem;
         }
 
         /* Testimonial Slider */
@@ -911,121 +1094,118 @@
         </div>
     </div>
 
-    <!-- ==================== WORD CLOUD / TAG CLOUD SECTION ==================== -->
-    <div class="word-cloud-container">
-        <div class="word-cloud">
-            <h2>What We Stand For</h2>
-            <p class="word-cloud-subtitle">Empowering your journey with guidance, support, and opportunities</p>
-            
-            <div class="word-cloud-tags">
-                <!-- Large Tags -->
-                <span class="tag tag-lg tag-teal">Success</span>
-                <span class="tag tag-lg tag-navy">Dreams</span>
-                <span class="tag tag-lg tag-accent">Future</span>
-                <span class="tag tag-lg tag-success">Guidance</span>
-                <span class="tag tag-lg tag-teal">Opportunity</span>
-                
-                <!-- Medium Tags -->
-                <span class="tag tag-md tag-navy">Career Excellence</span>
-                <span class="tag tag-md tag-accent">Education</span>
-                <span class="tag tag-md tag-success">Achievement</span>
-                <span class="tag tag-md tag-teal">Growth</span>
-                <span class="tag tag-md tag-navy">Support</span>
-                <span class="tag tag-md tag-accent">Empowerment</span>
-                <span class="tag tag-md tag-success">Mentorship</span>
-                
-                <!-- Small Tags -->
-                <span class="tag tag-sm tag-teal">Innovation</span>
-                <span class="tag tag-sm tag-navy">Trust</span>
-                <span class="tag tag-sm tag-accent">Goals</span>
-                <span class="tag tag-sm tag-success">Potential</span>
-                <span class="tag tag-sm tag-teal">Transformation</span>
-                <span class="tag tag-sm tag-navy">Excellence</span>
-                <span class="tag tag-sm tag-accent">Inspire</span>
-                <span class="tag tag-sm tag-success">Empower</span>
-            </div>
-        </div>
-    </div>
-
     <!-- ==================== CORE SERVICES SECTION ==================== -->
     <section id="services" style="background: var(--white);">
         <div class="container">
             <h2>Our Services</h2>
+            <p style="text-align: center; color: var(--gray-medium); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Comprehensive guidance tailored to your educational and career journey. All services are 100% free with no hidden charges.
+            </p>
             
-            <div class="grid-3">
-                <!-- Service Card 1: Career Counselling -->
-                <div class="card">
-                    <div class="service-icon">🎯</div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
-                        Career Counselling
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                <!-- Service Card 1: Career Counselling Session -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div class="service-icon" style="font-size: 2.5rem;">🎯</div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Career Counselling Session
                     </h3>
-                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
-                        Discover your true potential through personalized assessments. Our expert counselors help you identify your strengths, interests, and the career path that aligns perfectly with your goals and abilities.
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
+                        Explore various career options, industries, and educational paths. Get personalized insights into your strengths, interests, and the most suitable career direction for your unique profile.
                     </p>
-                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Personality & Aptitude Testing</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Stream Selection Guidance</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Career Roadmap Creation</span>
-                        </li>
-                    </ul>
+                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        📅 Book Now
+                    </button>
                 </div>
 
-                <!-- Service Card 2: Admission Guidance -->
-                <div class="card">
-                    <div class="service-icon">🎓</div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
+                <!-- Service Card 2: University/College Guidance -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div class="service-icon" style="font-size: 2.5rem;">🏫</div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        University/College Guidance
+                    </h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
+                        Selecting the right university is crucial for your academic and personal development. We help you research institutions, compare programs, evaluate reputation, and understand admission requirements to make the best choice.
+                    </p>
+                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        📅 Book Now
+                    </button>
+                </div>
+
+                <!-- Service Card 3: Admission Guidance -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div class="service-icon" style="font-size: 2.5rem;">🎓</div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
                         Admission Guidance
                     </h3>
-                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
-                        Navigate university applications with confidence. We provide end-to-end support including university selection, application strategy, entrance exam preparation, and interview coaching to secure your dream admission.
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
+                        Navigate the complete admission process with expert support. Research programs matching your profile, understand admission requirements, prepare application materials, and get interview coaching to secure your dream admission.
                     </p>
-                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>University Shortlisting</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Application Strategy & SOP</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Entrance Exam Preparation</span>
-                        </li>
-                    </ul>
+                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        📅 Book Now
+                    </button>
                 </div>
 
-                <!-- Service Card 3: Placement Support -->
-                <div class="card">
-                    <div class="service-icon">💼</div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--navy);">
-                        Placement Support
+                <!-- Service Card 4: Scholarship -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div class="service-icon" style="font-size: 2.5rem;">💰</div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Scholarship Guidance
                     </h3>
-                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
-                        Launch your career with confidence and clarity. We help you build a strong professional profile, prepare for interviews, and connect with leading employers for internships and job opportunities.
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
+                        Discover scholarship opportunities and financial support for your education. Our experts help you identify suitable scholarships, understand eligibility criteria, and prepare compelling applications to fund your dreams.
                     </p>
-                    <ul style="list-style: none; gap: 0.75rem; display: flex; flex-direction: column;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Resume & Profile Building</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Interview Coaching</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">✓</span>
-                            <span>Employer Connections</span>
-                        </li>
-                    </ul>
+                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        📅 Book Now
+                    </button>
+                </div>
+
+                <!-- Service Card 5: Placement Services -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div class="service-icon" style="font-size: 2.5rem;">💼</div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
+                        Placement Services
+                    </h3>
+                    <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
+                        Launch your career successfully with our comprehensive placement support. We help you search for job openings, internship opportunities, build professional profiles, prepare for interviews, and connect with leading employers.
+                    </p>
+                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        📅 Book Now
+                    </button>
                 </div>
             </div>
         </div>
@@ -1104,6 +1284,10 @@
                 <!-- Left Column: Text Content -->
                 <div>
                     <h2 style="text-align: left; margin-bottom: 2rem;">About Navyug Educare</h2>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p style="display: inline-block; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; margin-bottom: 1rem; font-size: 0.95rem;">ESTABLISHED SINCE 2014</p>
+                    </div>
                     
                     <div style="margin-bottom: 2rem;">
                         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;">
@@ -1295,7 +1479,7 @@
     <!-- ==================== CONTACT SECTION ==================== -->
     <section id="contact" class="bg-light">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2>Get Your Free Consultation Today</h2>
             
             <div class="grid-2" style="margin-top: 3rem;">
                 <!-- Left Column: Contact Information -->
@@ -1402,6 +1586,7 @@
         <div class="container">
             <div style="margin-bottom: 2rem;">
                 <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Navyug Educare India Pvt Ltd</h3>
+                <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--teal);">ESTABLISHED SINCE 2014</p>
                 <p style="margin-bottom: 1rem;">
                     Secure a Brighter Future With NAVYUG EDUCARE INDIA PVT LTD.
                 </p>
