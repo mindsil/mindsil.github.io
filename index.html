@@ -8,9 +8,32 @@
     <meta name="author" content="Navyug Educare India">
     <meta name="theme-color" content="#001f3f">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://navyugeducareindia.com/">
+
+    <!-- Content Security Policy
+         Notes:
+         • 'unsafe-inline' for script-src is required because of the inline <script> block.
+             Removing it in future means moving that block to an external .js file.
+         • 'unsafe-inline' for style-src is required for the many inline style="" attributes.
+         • Update connect-src if you ever migrate form backends.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src https://fonts.gstatic.com;
+        img-src 'self' https://images.unsplash.com data:;
+        connect-src https://api.web3forms.com;
+        frame-src https://www.google.com https://maps.google.com;
+        base-uri 'self';
+        form-action https://api.web3forms.com;
+        object-src 'none';
+    ">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mindsil.github.io/">
+    <meta property="og:url" content="https://navyugeducareindia.com/">
     <meta property="og:title" content="Navyug Educare India - 100% Free Career Counselling & Admission Guidance">
     <meta property="og:description" content="Expert education consulting for university admissions, career planning & placement support. Trusted by 10,000+ students across India.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
@@ -19,7 +42,7 @@
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mindsil.github.io/">
+    <meta property="twitter:url" content="https://navyugeducareindia.com/">
     <meta property="twitter:title" content="Navyug Educare India - 100% Free Career Counselling">
     <meta property="twitter:description" content="Get expert career guidance, university admission help & placement support - completely free. Join 10,000+ successful students.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
@@ -797,7 +820,6 @@
                     aria-expanded="false"
                     aria-controls="navMenu"
                     aria-label="Toggle navigation menu"
-                    onclick="toggleMobileMenu()"
                 >
                     <span class="line line1"></span>
                     <span class="line line2"></span>
@@ -816,10 +838,10 @@
                 <a href="#contact" style="color: var(--navy); font-weight: 500; padding: 0.75rem 0;">Contact</a>
 
                 <div class="mobile-nav-buttons">
-                    <a href="#contact" class="btn-primary" style="text-align: center; text-decoration: none;" onclick="closeMobileMenu()">
+                    <a href="#contact" class="btn-primary js-close-menu" style="text-align: center; text-decoration: none;">
                         Get Consultation
                     </a>
-                    <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20free%20career%20guidance" class="btn-secondary" style="text-align: center;">
+                    <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20free%20career%20guidance" class="btn-secondary" style="text-align: center;" target="_blank" rel="noopener noreferrer">
                         WhatsApp Us
                     </a>
                 </div>
@@ -842,7 +864,7 @@
                         <a href="#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">
                             Get Free Consultation
                         </a>
-                        <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20help%20with%20career%20guidance" class="btn-secondary">
+                        <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20help%20with%20career%20guidance" class="btn-secondary" target="_blank" rel="noopener noreferrer">
                             💬 WhatsApp Us
                         </a>
                     </div>
@@ -897,7 +919,7 @@
                     <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
                         Explore various career options, industries, and educational paths. Get personalized insights into your strengths, interests, and the most suitable career direction for your unique profile.
                     </p>
-                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <button class="js-book-btn" style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" aria-label="Book a Career Counselling Session">
                         📅 Book Now
                     </button>
                 </div>
@@ -918,7 +940,7 @@
                     <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
                         Selecting the right university is crucial for your academic and personal development. We help you research institutions, compare programs, evaluate reputation, and understand admission requirements to make the best choice.
                     </p>
-                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <button class="js-book-btn" style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" aria-label="Book a University Guidance Session">
                         📅 Book Now
                     </button>
                 </div>
@@ -939,7 +961,7 @@
                     <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
                         Navigate the complete admission process with expert support. Research programs matching your profile, understand admission requirements, prepare application materials, and get interview coaching to secure your dream admission.
                     </p>
-                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <button class="js-book-btn" style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" aria-label="Book an Admission Guidance Session">
                         📅 Book Now
                     </button>
                 </div>
@@ -960,7 +982,7 @@
                     <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
                         Discover scholarship opportunities and financial support for your education. Our experts help you identify suitable scholarships, understand eligibility criteria, and prepare compelling applications to fund your dreams.
                     </p>
-                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <button class="js-book-btn" style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" aria-label="Book a Scholarship Guidance Session">
                         📅 Book Now
                     </button>
                 </div>
@@ -981,7 +1003,7 @@
                     <p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: auto; flex-grow: 1;">
                         Launch your career successfully with our comprehensive placement support. We help you search for job openings, internship opportunities, build professional profiles, prepare for interviews, and connect with leading employers.
                     </p>
-                    <button style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(14, 165, 168, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <button class="js-book-btn" style="width: 100%; padding: 1rem; margin-top: 1.5rem; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" aria-label="Book a Placement Services Session">
                         📅 Book Now
                     </button>
                 </div>
@@ -1163,7 +1185,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 2.5rem;">
-                <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">
+                <button class="btn-primary js-book-btn">
                     Talk to a Counsellor About These Courses
                 </button>
             </div>
@@ -1414,7 +1436,7 @@
                         <div class="contact-info-icon">💬</div>
                         <div>
                             <p style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">WhatsApp</p>
-                            <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" style="color: var(--navy); font-weight: 600; text-decoration: none;">Chat with us</a>
+                            <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" style="color: var(--navy); font-weight: 600; text-decoration: none;" target="_blank" rel="noopener noreferrer">Chat with us</a>
                         </div>
                     </div>
 
@@ -1466,7 +1488,7 @@
                         ============================================================
                     -->
 
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleFormSubmit(event)" novalidate>
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                         <!-- Web3Forms required fields -->
                         <input type="hidden" name="access_key" value="cd5bdde0-99e7-4988-bb13-8b67d84aa090">
                         <input type="hidden" name="subject" value="New lead: Navyug Educare website">
@@ -1561,7 +1583,7 @@
                         </button>
 
                         <p style="font-size: 0.85rem; color: var(--gray-medium); margin-top: 1rem; text-align: center;">
-                            Prefer chat? <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" style="color: var(--teal); font-weight: 600; text-decoration: none;">Message us on WhatsApp</a>.
+                            Prefer chat? <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" style="color: var(--teal); font-weight: 600; text-decoration: none;" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.
                         </p>
                     </form>
                 </div>
@@ -1582,6 +1604,7 @@
                             style="border: 0; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
+                            sandbox="allow-scripts allow-same-origin"
                             allowfullscreen></iframe>
                     </div>
                     <div>
@@ -1595,6 +1618,7 @@
                             style="border: 0; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
+                            sandbox="allow-scripts allow-same-origin"
                             allowfullscreen></iframe>
                     </div>
                 </div>
@@ -1640,7 +1664,7 @@
                     <a href="#" aria-label="Navyug Educare on Instagram" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">📷</a>
                     <a href="#" aria-label="Navyug Educare on LinkedIn" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">💼</a>
                     <a href="#" aria-label="Navyug Educare on YouTube" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">▶️</a>
-                    <a href="https://wa.me/919220522887" aria-label="Navyug Educare on WhatsApp" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">💬</a>
+                    <a href="https://wa.me/919220522887" aria-label="Navyug Educare on WhatsApp" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem;">💬</a>
                 </div>
             </div>
 
@@ -1677,7 +1701,9 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // Mobile Menu Toggle
+        // ============================================================
+        // MOBILE MENU
+        // ============================================================
         function toggleMobileMenu() {
             const toggle = document.getElementById('mobileMenuToggle');
             const navMenu = document.getElementById('navMenu');
@@ -1697,96 +1723,181 @@
             toggle.setAttribute('aria-expanded', 'false');
         }
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('#navMenu a').forEach(link => {
+        // Wire up mobile menu toggle (no inline onclick needed)
+        document.getElementById('mobileMenuToggle').addEventListener('click', toggleMobileMenu);
+
+        // Close menu when a nav link is clicked
+        document.querySelectorAll('#navMenu a, .js-close-menu').forEach(function(link) {
             link.addEventListener('click', closeMobileMenu);
         });
 
+        // Accessibility: ESC closes the mobile menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') { closeMobileMenu(); }
+        });
+
         // ============================================================
-        // FORM SUBMISSION
-        // Default: POST to Web3Forms (action attribute on the form).
-        // We intercept submit so we can show inline status without a redirect.
+        // SERVICE CARD "BOOK NOW" BUTTONS & COURSES CTA
+        // Scroll to contact form; hover effects applied via JS (no inline handlers)
         // ============================================================
-        async function handleFormSubmit(event) {
-            event.preventDefault();
+        document.querySelectorAll('.js-book-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            btn.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 8px 20px rgba(14, 165, 168, 0.3)';
+            });
+            btn.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
 
-            const form = event.target;
-            const formMessage = document.getElementById('formMessage');
-            const submitBtn = form.querySelector('button[type="submit"]');
-
-            // Honeypot: if the hidden "company" field is filled, drop the request silently.
-            if (form.company && form.company.value.trim() !== '') {
-                formMessage.textContent = 'Thank you! We will be in touch shortly.';
-                formMessage.classList.add('success');
-                form.reset();
-                return;
-            }
-
-            // Block submission if access key was not configured.
-            const accessKey = form.access_key && form.access_key.value;
-            if (!accessKey) {
-                formMessage.textContent = 'Form is not yet configured. Please email info@navyugeducareindia.com or use WhatsApp.';
-                formMessage.classList.remove('success');
-                formMessage.classList.add('error');
-                return;
-            }
-
-            const originalLabel = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            formMessage.classList.remove('success', 'error');
-            formMessage.textContent = '';
-
-            try {
-                const data = new FormData(form);
-                const res = await fetch(form.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                const json = await res.json().catch(() => ({}));
-
-                if (res.ok && (json.success === true || json.success === undefined)) {
-                    formMessage.textContent = 'Thank you! Your message has been sent. We will contact you within 2 to 4 hours.';
-                    formMessage.classList.add('success');
-                    form.reset();
-                } else {
-                    throw new Error(json.message || 'Submission failed');
-                }
-            } catch (err) {
-                formMessage.textContent = 'Sorry, something went wrong. Please call +91-9220522887 or message us on WhatsApp.';
-                formMessage.classList.add('error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalLabel;
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                setTimeout(() => formMessage.classList.remove('success'), 8000);
-            }
-        }
-
-        // Smooth scrolling for in-page anchors (CSS scroll-behavior covers most cases;
-        // this ensures focus moves with the scroll for keyboard users).
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
+        // ============================================================
+        // SMOOTH SCROLLING FOR IN-PAGE ANCHORS
+        // CSS scroll-behavior covers most cases; this also moves focus
+        // for keyboard/screen-reader users.
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
                 if (href === '#' || !document.querySelector(href)) return;
-                const target = document.querySelector(href);
+                var target = document.querySelector(href);
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // After scroll, move focus to the target for screen readers and keyboard users.
                 target.setAttribute('tabindex', '-1');
                 target.focus({ preventScroll: true });
             });
         });
 
-        // Accessibility: ESC closes the mobile menu
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeMobileMenu();
+        // ============================================================
+        // FORM SUBMISSION
+        // Wired via addEventListener (no onsubmit attribute on the form).
+        // Includes:
+        //   • Honeypot check
+        //   • Client-side field validation
+        //   • 60-second rate limit between submissions
+        //   • Inline status messages
+        // ============================================================
+        var lastSubmissionTime = 0;
+        var RATE_LIMIT_MS = 60000; // 60 seconds
+
+        function showFormMessage(el, text, type) {
+            el.textContent = text;
+            el.classList.remove('success', 'error');
+            el.classList.add(type);
+        }
+
+        function validateForm(form) {
+            var name  = form.name  ? form.name.value.trim()  : '';
+            var email = form.email ? form.email.value.trim() : '';
+            var phone = form.phone ? form.phone.value.trim() : '';
+
+            if (name.length < 2) {
+                return 'Please enter your full name (at least 2 characters).';
             }
-        });
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            if (!emailRegex.test(email)) {
+                return 'Please enter a valid email address.';
+            }
+            var phoneRegex = /^[0-9+\- ]{7,15}$/;
+            if (phone && !phoneRegex.test(phone)) {
+                return 'Please enter a valid phone number (digits, spaces, + or - only, 7-15 characters).';
+            }
+            return null; // null means valid
+        }
 
+        async function handleFormSubmit(event) {
+            event.preventDefault();
 
+            var form = event.target;
+            var formMessage = document.getElementById('formMessage');
+            var submitBtn  = form.querySelector('button[type="submit"]');
+
+            // Honeypot: if the hidden "company" field is filled, drop silently.
+            if (form.company && form.company.value.trim() !== '') {
+                showFormMessage(formMessage, 'Thank you! We will be in touch shortly.', 'success');
+                form.reset();
+                return;
+            }
+
+            // Rate limit: prevent rapid re-submission.
+            var now = Date.now();
+            var elapsed = now - lastSubmissionTime;
+            if (lastSubmissionTime > 0 && elapsed < RATE_LIMIT_MS) {
+                var remaining = Math.ceil((RATE_LIMIT_MS - elapsed) / 1000);
+                showFormMessage(formMessage, 'Please wait ' + remaining + ' seconds before submitting again.', 'error');
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                return;
+            }
+
+            // Block submission if access key was not configured.
+            var accessKey = form.access_key && form.access_key.value;
+            if (!accessKey) {
+                showFormMessage(formMessage, 'Form is not yet configured. Please email info@navyugeducareindia.com or use WhatsApp.', 'error');
+                return;
+            }
+
+            // Client-side validation.
+            var validationError = validateForm(form);
+            if (validationError) {
+                showFormMessage(formMessage, validationError, 'error');
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                return;
+            }
+
+            var originalLabel = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+            formMessage.classList.remove('success', 'error');
+            formMessage.textContent = '';
+
+            try {
+                var data = new FormData(form);
+                var res  = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                var json = await res.json().catch(function() { return {}; });
+
+                if (res.ok && (json.success === true || json.success === undefined)) {
+                    showFormMessage(formMessage, 'Thank you! Your message has been sent. We will contact you within 2 to 4 hours.', 'success');
+                    form.reset();
+                    lastSubmissionTime = Date.now();
+
+                    // Keep button disabled for the rate-limit window.
+                    var countdown = Math.ceil(RATE_LIMIT_MS / 1000);
+                    var timer = setInterval(function() {
+                        countdown--;
+                        if (countdown <= 0) {
+                            clearInterval(timer);
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalLabel;
+                        } else {
+                            submitBtn.textContent = 'Please wait ' + countdown + 's…';
+                        }
+                    }, 1000);
+                } else {
+                    throw new Error(json.message || 'Submission failed');
+                }
+            } catch (err) {
+                showFormMessage(formMessage, 'Sorry, something went wrong. Please call +91-9220522887 or message us on WhatsApp.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+            } finally {
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // Auto-clear success message after 8 seconds.
+                setTimeout(function() { formMessage.classList.remove('success'); }, 8000);
+            }
+        }
+
+        // Wire up form submission (replaces onsubmit attribute).
+        var contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleFormSubmit);
+        }
     </script>
 </body>
 </html>
