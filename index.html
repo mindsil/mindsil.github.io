@@ -513,62 +513,7 @@
             }
         }
 
-        /* Process timeline: horizontal connector on desktop */
-        .timeline-grid {
-            position: relative;
-            counter-reset: step;
-        }
-
-        @media (min-width: 1024px) {
-            .timeline-grid::before {
-                content: '';
-                position: absolute;
-                top: 1.25rem; /* half of 2.5rem circle = 1.25rem */
-                left: calc(10% + 1.25rem);
-                right: calc(10% + 1.25rem);
-                height: 3px;
-                background: linear-gradient(90deg, var(--teal) 0%, var(--accent) 100%);
-                z-index: 0;
-            }
-
-            .timeline-item {
-                padding-left: 0;
-                padding-top: 4rem;
-                text-align: center;
-                position: relative;
-                z-index: 1;
-            }
-
-            .timeline-item::before {
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 3.5rem;
-        }
-
-        .timeline-item::before {
-            content: counter(step);
-            counter-increment: step;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--teal);
-            color: var(--white);
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            box-shadow: 0 0 0 2px var(--teal);
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 2rem; /* (2.5rem height - 2*4px border) = ~2rem inner */
-            text-align: center;
-        }
+        /* Process timeline styles are in the #process section block */
 
         /* Hero Section */
         .hero {
@@ -941,8 +886,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
                         <div class="service-icon" style="font-size: 2.5rem;">🎯</div>
                         <div style="text-align: right;">
-                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
-                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">~1 Hour</div>
                             <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
                         </div>
                     </div>
@@ -962,8 +907,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
                         <div class="service-icon" style="font-size: 2.5rem;">🏫</div>
                         <div style="text-align: right;">
-                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
-                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">~1 Hour</div>
                             <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
                         </div>
                     </div>
@@ -983,8 +928,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
                         <div class="service-icon" style="font-size: 2.5rem;">🎓</div>
                         <div style="text-align: right;">
-                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
-                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">~1 Hour</div>
                             <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
                         </div>
                     </div>
@@ -1004,8 +949,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
                         <div class="service-icon" style="font-size: 2.5rem;">💰</div>
                         <div style="text-align: right;">
-                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
-                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">~1 Hour</div>
                             <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
                         </div>
                     </div>
@@ -1025,8 +970,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
                         <div class="service-icon" style="font-size: 2.5rem;">💼</div>
                         <div style="text-align: right;">
-                            <div style="font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.25rem;">Duration</div>
-                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">1 Hour</div>
+                            
+                            <div style="font-weight: 700; color: var(--navy); font-size: 1.1rem;">~1 Hour</div>
                             <div style="font-size: 0.875rem; background: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">100% Free</div>
                         </div>
                     </div>
@@ -1049,32 +994,97 @@
         <div class="container">
             <h2 id="process-title">Our 3-Step Process</h2>
 
-            <div class="timeline-grid" style="display: grid; position: relative; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
-                <div class="timeline-item">
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        Profile Evaluation
-                    </h3>
-                    <p style="color: var(--gray-medium);">
-                        We conduct an in-depth analysis of your academic background, interests, strengths, and career aspirations to create a comprehensive student profile.
-                    </p>
-                </div>
+            <style>
+                /* ---- Process Steps ---- */
+                .process-steps {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+                    margin-top: 3rem;
+                    position: relative;
+                }
 
-                <div class="timeline-item">
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        College Selection
-                    </h3>
-                    <p style="color: var(--gray-medium);">
-                        Based on your profile, we identify and recommend universities and programs that perfectly match your academic goals and career aspirations.
-                    </p>
-                </div>
+                /* Horizontal connecting line across the top of all 3 columns */
+                .process-steps::before {
+                    content: '';
+                    position: absolute;
+                    top: 1.5rem; /* half of 3rem circle */
+                    left: calc(100% / 6);   /* centre of first column */
+                    right: calc(100% / 6);  /* centre of last column */
+                    height: 3px;
+                    background: linear-gradient(90deg, var(--teal) 0%, var(--accent) 100%);
+                    z-index: 0;
+                }
 
-                <div class="timeline-item">
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
-                        Final Enrollment
-                    </h3>
-                    <p style="color: var(--gray-medium);">
-                        We support you through application completion, exam preparation, interview rounds, and final enrollment to secure your admission.
-                    </p>
+                .process-step {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .process-circle {
+                    width: 3rem;
+                    height: 3rem;
+                    background: var(--teal);
+                    border-radius: 50%;
+                    border: 4px solid var(--white);
+                    box-shadow: 0 0 0 2px var(--teal);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--white);
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    flex-shrink: 0;
+                    margin-bottom: 1.5rem;
+                }
+
+                /* Mobile: stack vertically, hide the horizontal line */
+                @media (max-width: 767px) {
+                    .process-steps {
+                        grid-template-columns: 1fr;
+                        gap: 2rem;
+                    }
+                    .process-steps::before {
+                        display: none;
+                    }
+                    .process-step {
+                        flex-direction: row;
+                        text-align: left;
+                        gap: 1.25rem;
+                        align-items: flex-start;
+                    }
+                    .process-circle {
+                        margin-bottom: 0;
+                        flex-shrink: 0;
+                    }
+                }
+            </style>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-circle">1</div>
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">Profile Evaluation</h3>
+                        <p style="color: var(--gray-medium);">We conduct an in-depth analysis of your academic background, interests, strengths, and career aspirations to create a comprehensive student profile.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-circle">2</div>
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">College Selection</h3>
+                        <p style="color: var(--gray-medium);">Based on your profile, we identify and recommend universities and programs that perfectly match your academic goals and career aspirations.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-circle">3</div>
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">Final Enrollment</h3>
+                        <p style="color: var(--gray-medium);">We support you through application completion, exam preparation, interview rounds, and final enrollment to secure your admission.</p>
+                    </div>
                 </div>
             </div>
         </div>
