@@ -516,15 +516,16 @@
         /* Process timeline: horizontal connector on desktop */
         .timeline-grid {
             position: relative;
+            counter-reset: step;
         }
 
         @media (min-width: 1024px) {
             .timeline-grid::before {
                 content: '';
                 position: absolute;
-                top: 1.25rem;
-                left: 10%;
-                right: 10%;
+                top: 1.25rem; /* half of 2.5rem circle = 1.25rem */
+                left: calc(10% + 1.25rem);
+                right: calc(10% + 1.25rem);
                 height: 3px;
                 background: linear-gradient(90deg, var(--teal) 0%, var(--accent) 100%);
                 z-index: 0;
@@ -547,7 +548,7 @@
 
         .timeline-item {
             position: relative;
-            padding-left: 3rem;
+            padding-left: 3.5rem;
         }
 
         .timeline-item::before {
@@ -563,15 +564,10 @@
             border-radius: 50%;
             border: 4px solid var(--white);
             box-shadow: 0 0 0 2px var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .timeline-grid {
-            counter-reset: step;
+            font-size: 1rem;
+            line-height: 2rem; /* (2.5rem height - 2*4px border) = ~2rem inner */
+            text-align: center;
         }
 
         /* Hero Section */
@@ -1053,7 +1049,7 @@
         <div class="container">
             <h2 id="process-title">Our 3-Step Process</h2>
 
-            <div class="timeline-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="timeline-grid" style="display: grid; position: relative; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
                 <div class="timeline-item">
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy);">
                         Profile Evaluation
@@ -1654,24 +1650,13 @@
                     © 2026 Navyug Educare India Pvt Ltd. All rights reserved.
                 </p>
                 <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.75rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    This website uses cookies to analyse traffic and improve your experience. By continuing to browse, you agree to our use of cookies. Forms are protected by anti-spam measures and your data is handled per our privacy policy.
+                    Forms are protected by anti-spam measures and your data is handled per our privacy policy.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== COOKIE CONSENT BANNER ==================== -->
-    <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy); color: var(--white); padding: 1rem 1.5rem; z-index: 1500; box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
-            <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; flex: 1 1 280px;">
-                We use cookies to analyse site usage and optimise your experience. <a href="#privacy" style="color: var(--teal); font-weight: 600;">Learn more</a>.
-            </p>
-            <div style="display: flex; gap: 0.75rem;">
-                <button type="button" id="cookieAccept" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Accept</button>
-                <button type="button" id="cookieDecline" class="btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; border-color: var(--white); color: var(--white);">Decline</button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- ==================== WHATSAPP WIDGET ==================== -->
     <a href="https://wa.me/919220522887?text=Hi%20Navyug%20Educare%2C%20I%20need%20career%20guidance" class="whatsapp-widget" target="_blank" rel="noopener noreferrer" aria-label="Chat with Navyug Educare on WhatsApp">
@@ -1764,6 +1749,7 @@
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalLabel;
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 setTimeout(() => formMessage.classList.remove('success'), 8000);
             }
         }
@@ -1790,21 +1776,7 @@
             }
         });
 
-        // Cookie consent banner: shown until accepted/declined, persists in localStorage.
-        (function () {
-            const KEY = 'navyug_cookie_consent';
-            const banner = document.getElementById('cookieBanner');
-            if (!banner) return;
-            if (!localStorage.getItem(KEY)) {
-                banner.style.display = 'block';
-            }
-            const dismiss = (value) => {
-                try { localStorage.setItem(KEY, value); } catch (e) { /* private mode: silently ignore */ }
-                banner.style.display = 'none';
-            };
-            document.getElementById('cookieAccept').addEventListener('click', () => dismiss('accepted'));
-            document.getElementById('cookieDecline').addEventListener('click', () => dismiss('declined'));
-        })();
+
     </script>
 </body>
 </html>
